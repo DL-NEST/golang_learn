@@ -7,6 +7,7 @@ require (
 	github.com/gin-gonic/gin v1.9.0
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/graphql-go/graphql v0.8.0
+	github.com/panjf2000/ants/v2 v2.7.1
 	github.com/redis/go-redis/v9 v9.0.2
 	github.com/shopspring/decimal v1.3.1
 	google.golang.org/grpc v1.53.0

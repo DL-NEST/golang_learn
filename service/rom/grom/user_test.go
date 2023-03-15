@@ -9,6 +9,7 @@ import (
 	"gorm.io/gorm"
 	"log"
 	"sync"
+	"sync/atomic"
 	"testing"
 	"time"
 )
@@ -262,4 +263,25 @@ func TestMqttTest(t *testing.T) {
 		}()
 	}
 	wg.Wait()
+}
+
+func TestLong(t *testing.T) {
+	var wg sync.WaitGroup
+	var num int64 = 0
+	var atomicNum atomic.Int64
+	atomicNum.Store(0)
+	wg.Add(10000)
+
+	for i := 0; i < 10000; i++ {
+		go func() {
+			num++
+			atomicNum.Add(1)
+			wg.Done()
+		}()
+	}
+
+	wg.Wait()
+
+	t.Logf("num:%d", num)
+	t.Logf("num:%d", atomicNum.Load())
 }
