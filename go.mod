@@ -4,7 +4,9 @@ go 1.19
 
 require (
 	github.com/eclipse/paho.mqtt.golang v1.4.2
+	github.com/edsrzf/mmap-go v1.1.0
 	github.com/gin-gonic/gin v1.9.0
+	github.com/go-mmap/mmap v0.6.0
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/graphql-go/graphql v0.8.0
 	github.com/panjf2000/ants/v2 v2.7.1
